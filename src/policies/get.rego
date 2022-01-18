@@ -1,7 +1,7 @@
 package simplepolicy.GET.me
 default allowed = false
 
-# only allow myself
+# only authorize one user
 allowed {
-  input.user.id == "e424801b-531e-4ec8-bcbe-00fe6d5aa5d3"
+  input.user.id == "011a88bc-7df9-4d92-ba1f-2ff319e101e1"
 }
