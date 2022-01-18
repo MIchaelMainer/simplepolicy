@@ -30,7 +30,7 @@ namespace simplepolicy
     {
 
         [JsonPropertyName("decisions")]
-        public List<string>? Decisions { get; set; }
+        public List<string> Decisions { get; set; }
 
         [JsonPropertyName("id")]
         public string Id { get; set; }
@@ -48,7 +48,7 @@ namespace simplepolicy
     internal class Decision
     {
         [JsonPropertyName("decision")]
-        public string? DecisionType { get; set; } // ugh
+        public string DecisionType { get; set; } // ugh
 
         [JsonPropertyName("is")]
         public bool Is { get; set; }

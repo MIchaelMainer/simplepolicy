@@ -16,24 +16,16 @@ namespace MyApp // Note: actual namespace depends on the project name.
         {
             Console.WriteLine("Hello World!");
 
+            // Get the users imported from identity providers into the Aserto directory.
             var users = await GetUsersInAsertoDirectory();
 
             // Now we have the users from the Aserto directory.
             foreach(var user in users)
             {
+                // Use the Is Authorized API to check whether the user is authorized per policy defined in simplepolicy.GET.me
                 var isAuthorized = await IsAuthorized(user.Id);
                 Console.WriteLine($"{user.DisplayName}\t\t\tIsAuthorized: {isAuthorized.ToString()}");
             }
-                
-
-            // Use the IsAuthorized API to get test whether each user is authorized. 
-            // Look at the policy file.
-
-
-            // Now to make a decision
-
-
-
         }
 
         static async Task<List<AsertoUser>> GetUsersInAsertoDirectory()
