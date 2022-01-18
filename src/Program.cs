@@ -38,7 +38,7 @@ namespace MyApp // Note: actual namespace depends on the project name.
 
         static async Task<List<AsertoUser>> GetUsersInAsertoDirectory()
         {
-            var client = new RestClient("https://authorizer.prod.aserto.com/api/v1/dir/users?page.size=300");
+            var client = new RestClient("https://authorizer.prod.aserto.com/api/v1/dir/users?page.size=10");
             var request = new RestRequest();
             request.Method = Method.Get;
             request.AddHeader("Accept", "application/json");
