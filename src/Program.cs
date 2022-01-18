@@ -1,16 +1,13 @@
 ﻿using RestSharp;
-using simplepolicy;
-using System;
 using System.Text.Json;
 
-namespace MyApp // Note: actual namespace depends on the project name.
+namespace simplepolicy
 {
     internal class Program
     {
-        // TODO: add this to environment at least! Or another class I won't show.
-        static readonly string tenantToken = "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IndRQkhJMDRaLWlWaGJvUEg2aklCMCJ9.eyJpc3MiOiJodHRwczovL2FzZXJ0by51cy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8OTg0Y2NkMDItNjgzMS0xMWVjLWJmNTktMDIzMmM4MWIwMTQ3IiwiYXVkIjpbImh0dHBzOi8vY29uc29sZS5hc2VydG8uY29tIiwiaHR0cHM6Ly9hc2VydG8udXMuYXV0aDAuY29tL3VzZXJpbmZvIl0sImlhdCI6MTY0MjQ1MzcwNiwiZXhwIjoxNjQyNTQwMTA2LCJhenAiOiI5OG9meE5vVWRnVnU3dnVZQWRkV1cyV3BnbEZNNHRpbCIsInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgZW1haWwifQ.afI4IpoHS9dEP18W6UNZEPXHp3eISYotVURETfoDIlT0s61zjSfR5thfdSDXkUd2b3qU0zs8qypos8nBkcbxj5lpE42kc2MF0b_kYcIAKWyprU0Ro39ne85lzRnlddaKCbt_789N2gndlTeu-ek3NsfJP6MPwfmj60-wSiBVVgU_mGEpO-AF_-4ohuFakyTCTtZgx0iw33p9Bp8uHyzNFOURllphbRZbTvX0SaJntEFcvFPGjQx2jCnSWeN1q7JiISkPIQIRGML1Kb2etjUePiTpNYIN_ddrdIl7KtXLe-cNYymZDRRl9wlrJeZ5SqnGP8UCBlZK9ok9aQ4CIrBXIA";
-        static readonly string authorizerToken = "basic 31d8da5ef51bc23b2b9a43321d8949e9e432e642ed27229c99424f5e2d2bde47";
-        static readonly string asertoTenant = "6561da7a-6832-11ec-aa7f-00777bcce0c6";
+        static readonly string tenantToken = Environment.GetEnvironmentVariable("asertoTenantToken");
+        static readonly string authorizerToken = Environment.GetEnvironmentVariable("asertoAuthorizerToken");
+        static readonly string asertoTenant = Environment.GetEnvironmentVariable("asertoTenant");
 
         static async Task Main(string[] args)
         {
