@@ -2,6 +2,9 @@
 
 namespace simplepolicy
 {
+    /// <summary>
+    /// Represents the payload sent to the Authorizer to get an authorization decision.
+    /// </summary>
     internal class ContextPayload
     {
 
@@ -12,6 +15,10 @@ namespace simplepolicy
         public PolicyContext PolicyContext { get; set; }
     }
 
+    /// <summary>
+    /// Identifies the user and user type. Used by the Authorizer to identify the user.
+    /// https://docs.aserto.com/docs/authorizer-guide/identity-context
+    /// </summary>
     internal class IdentityContext
     {
         [JsonPropertyName("type")]
@@ -21,6 +28,10 @@ namespace simplepolicy
         public string Identity { get; set; }
     }
 
+    /// <summary>
+    /// Identifies the policy and the decisions to evaluate.
+    /// https://docs.aserto.com/docs/authorizer-guide/policy-context
+    /// </summary>
     internal class PolicyContext
     {
 
@@ -34,21 +45,24 @@ namespace simplepolicy
         public string Path { get; set; }
     }
 
+    /// <summary>
+    /// Models the results returned from the Authorizer.
+    /// </summary>
     internal class DecisionResult
     {
         [JsonPropertyName("decisions")]
         public List<Decision> Decisions { get; set; }
     }
 
+    /// <summary>
+    /// Represents a single decision returned by the Authorizer Is API.
+    /// </summary>
     internal class Decision
     {
         [JsonPropertyName("decision")]
-        public string DecisionType { get; set; } // ugh
+        public string DecisionType { get; set; } // ugh <-- forgot why I wrote this, something about naming probably
 
         [JsonPropertyName("is")]
         public bool Is { get; set; }
-
     }
-
-
 }

@@ -1,5 +1,5 @@
 package simplepolicy.GET.me
-default allowed = false
+default allowed = false # Supporting the secure by default principle of authorization
 
 # only authorize one user
 allowed {
