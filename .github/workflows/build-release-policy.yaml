@@ -43,4 +43,6 @@ jobs:
       with:
         bundle: build/bundle.tar.gz
         release_id: ${{ steps.release.outputs.release_id }}
+        policy_id: 91b8b848-7825-11ec-ae9c-01777bcce0c6
+        tenant_id: 6561da7a-6832-11ec-aa7f-00777bcce0c6
         verbose: true
