@@ -41,7 +41,7 @@ namespace simplepolicy
             var request = new RestRequest();
             request.Method = Method.Get;
             request.AddHeader("Accept", "application/json");
-            request.AddHeader("authorization", directoryToken);
+            request.AddHeader("authorization", "basic " + directoryToken);
             request.AddHeader("aserto-tenant-id", asertoTenant);
 
             var response = await client.ExecuteAsync(request);
@@ -63,7 +63,7 @@ namespace simplepolicy
             
             request.Method = Method.Post;
             request.AddHeader("Accept", "application/json");
-            request.AddHeader("authorization", authorizerToken);
+            request.AddHeader("authorization", "basic " + authorizerToken);
             request.AddHeader("aserto-tenant-id", asertoTenant);
             request.AddHeader("Content-Type", "application/json");
 
